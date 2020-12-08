@@ -80,7 +80,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # if something was changed in repository
-if [ "${changelog_frontend}" != "Already up to date." ]; then
+if [ "${changelog_frontend}" != "Already up to date." ] && [ -d dist/scripty ]; then
     ng build --prod
 fi
 
@@ -88,7 +88,7 @@ if [ $? != 0 ]; then
     echo "failed to build frontend, exiting..."
     exit 1
 fi
-if [ ! -d dist ] && [ ! -d dist/scripty ]; then
+if [ ! -d dist/scripty ]; then
     echo "dist or dist/scripty directory not exists after build, exiting..."
     exit 1
 fi
