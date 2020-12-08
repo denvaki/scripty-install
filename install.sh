@@ -80,7 +80,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # if something was changed in repository
-if [ "${changelog_frontend}" != "Already up to date." ] || [ -d dist/scripty ]; then
+if [ "${changelog_frontend}" != "Already up to date." ] || [ ! -d dist/scripty ]; then
     ng build --prod
 fi
 
