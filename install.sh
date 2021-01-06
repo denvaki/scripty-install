@@ -21,6 +21,9 @@ if [ ! -s "Dockerfile" ]; then
     exit 1
 fi
 
+git pull
+
+
 scripty_backendRepo="https://github.com/denvaki/scripty-backend.git"
 scripty_frontendRepo="https://github.com/denvaki/scripty-frontend.git"
 
